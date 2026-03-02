@@ -1,0 +1,19 @@
+package strings;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		String str1 = "Kunal";
+		String str2 = "Kunal";
+		
+		String str3 = new String("Kunal");
+		str3 = "Kunal";
+		
+		System.out.println(str1 == str2);
+		System.out.println(str1 == str3);
+		System.out.println(System.identityHashCode(str1));
+		System.out.println(System.identityHashCode(str2));
+		System.out.println(System.identityHashCode(str3));
+	}
+
+}
