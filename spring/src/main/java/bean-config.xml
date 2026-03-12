@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	
+	<bean name="student" class="com.akshat.spring.Student">
+		<property name="id" value="100" />
+		<property name="name" value="Akshat Jaiswal" />
+		<property name="gender" value="male" />
+		<property name="marks" value="100" />
+	</bean>
+	
+	<!-- <bean name="student1" class="com.akshat.spring.Student">
+		<constructor-arg value="102" />
+		<constructor-arg value="Steven Jaiswal" />
+		<constructor-arg value="male" />
+		<constructor-arg value="95" />
+	</bean> -->
+	
+	<!-- <bean name="student1" class="com.akshat.spring.Student">
+		<property name="id" value="102" />
+		<property name="name" value="Steven Jaiswal" />
+		<property name="gender" value="male" />
+		<property name="marks" value="95" />
+	</bean> -->
+	
+	<bean name="employee" class="com.akshat.spring.Employee" autowire="byType">
+		<property name="id" value="123" />
+		<!-- <property name="name" value="Sarthak Jaiswal" />
+		<property name="email" value="one@gmail.com" /> -->
+		<property name="salary" value="123456789" />
+		<!-- <property name="student" ref="student1" /> -->
+	</bean>
+	
+	<bean name="String" class="java.lang.String">
+		<constructor-arg value="Anything" />
+	</bean>
+	
+</beans>
