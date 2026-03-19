@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.springboot2.exception.NotFoundException;
 import com.springboot2.models.Employee;
 import com.springboot2.repos.EmployeeRepo;
 
@@ -23,7 +24,7 @@ public class EmployeeService {
 	}
 	
 	public Employee getEmployeeById(int id) {
-		return employeeRepo.findById(id).orElse(null);
+		return employeeRepo.findById(id).orElseThrow(() -> new NotFoundException("Employee not found with id " + id));
 	}
 	
 	public void deleteEmployee(int id) {
@@ -31,7 +32,7 @@ public class EmployeeService {
 	}
 	
 	public Employee updateEmployee(int id, String name) {
-		Employee employee = employeeRepo.findById(id).orElse(null);
+		Employee employee = employeeRepo.findById(id).orElseThrow(() -> new NotFoundException("Employee not found with id " + id));
 		
 		employee.setName(name);
 		
